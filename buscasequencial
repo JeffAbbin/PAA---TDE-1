@@ -1,0 +1,42 @@
+package buscasequencial;
+
+public class busca {
+
+	public static void main(String[] args) {
+		int N = 10;   //N começa com 10 se quiser pode mudar
+		while( N < 10000000) {
+		long cont = 1;
+        int[] vetor = new int[N];
+
+        for (int i = 0; i < vetor.length; i++) {
+                vetor[i] = (int) (Math.random()*N);
+        }
+
+        long tempoInicial = System.currentTimeMillis();
+        int x;
+        // para testa os casos escolher um dos 3 linhas cometados abaixo
+       // x = (int) (Math.random()*N);// caso aleatirio
+       //x = vetor[0];// melhor caso
+       // x = -60;// pior caso (numeo negarivos nunca vao estar no vetor)
+        		
+        		
+       
+        for(int i = 0; i < vetor.length; i++){
+            if(vetor[i] == x){
+                
+                break; 
+            }
+        
+        
+        if(i >= vetor.length)
+               
+        cont++; // conta
+        }
+        
+        long tempoFinal = System.currentTimeMillis();
+        
+        System.out.println("N = " + N +" tempo = " + (tempoFinal - tempoInicial) + "ms" + " realizou " + cont + " operação basica");
+        N = N*2; // dobra N para proximo teste
+		}
+	}
+}
