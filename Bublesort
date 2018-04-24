@@ -1,0 +1,32 @@
+public class Bublesort {
+
+	public static void main(String[] args) {
+		int N = 10;   //N começa com 10 se quiser pode mudar
+		while( N < 10000000) {
+		long cont = 0;
+        int[] vetor = new int[N];
+
+        for (int i = 0; i < vetor.length; i++) {
+                vetor[i] = (int) (Math.random()*N);
+        }
+
+        long tempoInicial = System.currentTimeMillis();
+
+        for (int i = vetor.length; i >= 1; i--) {
+            for (int j = 1; j < i; j++) {
+                if (vetor[j - 1] > vetor[j]) {
+                    int aux = vetor[j];
+                    vetor[j] = vetor[j - 1];
+                    vetor[j - 1] = aux;
+                }
+                cont++; // da uma olhada se onde eu o contador esta em operaçao  basica
+            }
+        }
+        
+        long tempoFinal = System.currentTimeMillis();
+        
+        System.out.println("N = " + N +" tempo = " + (tempoFinal - tempoInicial) + "ms" + " realizou " + cont + " operação basica");
+        N = N*2; // dobra N para proximo teste
+		}
+	}
+}
