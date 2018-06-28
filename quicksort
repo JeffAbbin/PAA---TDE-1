@@ -21,7 +21,6 @@ public class quick {
 		}
 	}
 
-	
 	private static void quickSort(int[] vetor, int inicio, int fim) {
         if (inicio < fim) {
                int posicaoPivo = separar(vetor, inicio, fim);
@@ -29,8 +28,6 @@ public class quick {
                quickSort(vetor, posicaoPivo + 1, fim);
         }
   }
-	
-	
 	 private static int separar(int[] vetor, int inicio, int fim) {
          int pivo = vetor[inicio];
          int i = inicio + 1, f = fim;
@@ -44,8 +41,7 @@ public class quick {
                        vetor[i] = vetor[f];
                        vetor[f] = troca;
                        i++;
-                       f--;
-                       
+                       f--;  
                 }
          }
          vetor[inicio] = vetor[f];
